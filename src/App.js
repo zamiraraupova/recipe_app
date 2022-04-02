@@ -1,4 +1,5 @@
 import {Route, Routes} from 'react-router-dom';
+
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import About from './pages/about/About';
@@ -8,26 +9,22 @@ import Login from './pages/login/Login';
 
 
 function App() {
+
+  
+  
   return (
     <div className="App">
       <Navbar/>
       <Routes>
 
-        <Route path='/'>
-           <Home/>
-        </Route>
+        <Route path='/' element={<Home />}/> 
       
-        <Route path='/about'>
-           <About/>
-        </Route>
+        <Route path='/about' element ={<About/>}/>
+       
+        <Route path='/details' element ={<Details/>}/>
 
-        <Route path='/details'>
-           <Details/>
-        </Route>
-      
-        <Route path='/login'>
-           <Login/>
-        </Route>
+        <Route path='/login'element ={<Login/>}/>
+       
 
       </Routes>
 
