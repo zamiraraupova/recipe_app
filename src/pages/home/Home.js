@@ -7,8 +7,7 @@ const Home=()=>{
 
     const [searchText, setSearchText] = useState("")
     const [dropDown, setDropDown] = useState('breakfast')
-    // const [mealOption, setMealOption] = useState('')
-     const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
     const apiID = "901e6b6a";
     const apiKey = "0c490cc125cd01592c30205615da2c02"
@@ -19,23 +18,29 @@ const Home=()=>{
     }
 
     const handleSubmit=()=>{
-        axios.get(url)
-        .then(response => {
-        setData(response.data.hits);
+        if(searchText !== ''){
+            axios.get(url)
+            .then(response => {
+            setData(response.data.hits);
         });
+        } else{
+            alert('Please fill the input')
+        }
+        
     }
 
     const handleDropDown = (event) => {
         setDropDown(event.target.value)
     }
 
- console.log(data)
+//  console.log(data)
 
     return(
         <div className='home'>
             <h1>Food App</h1>
 
             <input value={searchText} id="search" type="text" onChange={handleChange} placeholder='Search'/>
+            
              <button onClick={handleSubmit}>Submit</button>  
              <select value={dropDown} name="" id="" onChange={handleDropDown}>
                             <option value="breakfast">Breakfast</option>
@@ -46,7 +51,7 @@ const Home=()=>{
              </select>  
                         
             <div className="cards-container">       
-                {data.map(item=><RecipeCard item={item} />)}
+                {data !== [] && data.map((item, index)=><RecipeCard item={item} key={index} />)}
             </div>
         
         </div>
