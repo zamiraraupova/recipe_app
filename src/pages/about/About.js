@@ -12,10 +12,10 @@ const About=()=>{
             </div>
            
            <div className='text'>
-               <p>Hi, I am Zamira</p>
+               <p style={{fontSize: "larger"}}>Hi, I am Zamira</p>
                 <p>I am currently learning Front-End Development Languages.</p>
                 <p>I know JS, ReactJS</p>
-                <p>Send email : zamiraraupova13@gmail.com</p>
+                <p style={{fontSize: "larger"}}> <span style={{color:'white'}}>Send email</span> : zamiraraupova13@gmail.com</p>
            </div>
             
         </div>
