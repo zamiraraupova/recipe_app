@@ -1,20 +1,11 @@
 import './style.css'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Details from '../details/Details'
 
 const RecipeCard =(props)=>{
-
-    // const [details, setDetails] = useState([])
-    const [show, setShow] = useState(false)
     
-    const handleSubmit=()=>{
+    const handleSubmit=(e)=>{
         console.log('click',props.item.recipe)
-        // setDetails(props.item.recipe)
-    }
-
-    const handleShow=()=>{
-        setShow(!show)
+        props.updateDetails(e)
     }
 
 // console.log(props.item.recipe)
@@ -23,17 +14,12 @@ const RecipeCard =(props)=>{
             <h3>
                 {props.item.recipe.label}
             </h3>
-            <img src={props.item.recipe.image}/>
-
-            <button className='view-button' onClick={handleSubmit} onShow={handleShow}>View More</button>
+            <img className='img-card' src={props.item.recipe.image}/>
             
-            
-            <div className='details-container'>
-             
-                {show && <Details details={props.item.recipe}/>}
-             
-            </div>
-           
+            <Link to='/details'>
+             <button className='view-button' onClick={()=>handleSubmit(props.item.recipe)} >View More</button>
+            </Link>
+ 
         </div>
     )
 }

@@ -11,6 +11,7 @@ nav{
     font-size: 32px;
     color: rgb(0,173,181);
     background-color: #E1F1DD;
+    text-decoration: none;
 }
 ul{
     list-style-type: none;

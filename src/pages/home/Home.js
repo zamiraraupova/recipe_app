@@ -3,7 +3,7 @@ import './style.css'
 import axios from 'axios';
 import RecipeCard from './RecipeCard';
 
-const Home=()=>{
+const Home=({updateDetails})=>{
 
     const [searchText, setSearchText] = useState("")
     const [dropDown, setDropDown] = useState('breakfast')
@@ -39,19 +39,23 @@ const Home=()=>{
         <div className='home'>
             <h1>Food App</h1>
 
-            <input value={searchText} id="search" type="text" onChange={handleChange} placeholder='Search'/>
+            <div className='input-btn-select'>
+                <input value={searchText} id="search" type="text" onChange={handleChange} placeholder='Search'/>
             
-             <button onClick={handleSubmit}>Submit</button>  
-             <select value={dropDown} name="" id="" onChange={handleDropDown}>
+                 <button onClick={handleSubmit}>Submit</button>  
+                <select value={dropDown} name="" id="" onChange={handleDropDown}>
                             <option value="breakfast">Breakfast</option>
                             <option value="lunch">Lunch</option>
                             <option value="dinner">Dinner</option>
                             <option value="snack">Snack</option>
                             <option value="teatime">Tea-Time</option>
-             </select>  
+             </select> 
+                
+            </div>
+          
                         
             <div className="cards-container">       
-                {data !== [] && data.map((item, index)=><RecipeCard item={item} key={index} />)}
+                {data !== [] && data.map((item, index)=><RecipeCard item={item} key={index} updateDetails={updateDetails}/>)}
             </div>
         
         </div>
