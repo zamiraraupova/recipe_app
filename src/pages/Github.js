@@ -1,16 +1,16 @@
-// import { Link } from "react-router-dom";
-const Github=()=>{
+import React, { useEffect } from "react";
 
-    return(
-        <div>
-            <a  
-                href={{ pathname: "https://github.com/zamiraraupova" }}
-                target="_blank"> 
-                
-                Github page
-            </a>   
-        </div>
-    )
+function Github() {
+
+  useEffect(() => {
+    window.location.href = "https://github.com/zamiraraupova";
+  }, []);
+
+  return (
+    <div>
+      
+    </div>
+  );
 }
 
 export default Github;

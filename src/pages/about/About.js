@@ -1,10 +1,11 @@
 import './style.css'
+import dev from '../../assets/dev.png'
 const About=()=>{
 
     return(
         <div className='about'>
             <div className='about-image'>
-                <img src='' alt=''/>
+                <img src={dev} alt={dev} style={{width: '350px'}}/>
             </div>
             
             <div className='about-header'>

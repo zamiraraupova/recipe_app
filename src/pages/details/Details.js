@@ -1,11 +1,16 @@
 import './style.css'
+import ingred from '../../assets/ingred.png'
 const Details=(props)=>{
         //console.log(props)
         
         return (
             <div className="detail">
-            
-                <h3>{props.details.label}</h3>
+                
+                <div className='detail-header'>
+                      <h1>{props.details.label}</h1>
+                     <img className='ingr-img' src={ingred} alt={ingred} style={{width: '250px'}}/>
+                </div>
+              
 
               <div className='detail-container'> 
                <div className="detail-nutrients">
@@ -37,7 +42,7 @@ const Details=(props)=>{
                 </div>
                 
                 <div className="detail-ingred">
-                     {props.details.ingredientLines}
+                     <p>{props.details.ingredientLines}</p>
                 </div>
                 
                 </div> 

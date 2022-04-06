@@ -1,5 +1,6 @@
 import './style.css'
 import { Link } from "react-router-dom";
+import plate from '../../assets/plate.png'
 // import { useState, useEffect } from "react";
 
 const Login=()=>{
@@ -20,9 +21,10 @@ const Login=()=>{
     
     return(
         <div className="login">
-            {/* <img src={image} alt={image}/> */}
+            
                 
             <form id="form" className="login-form">
+                <img src={plate} alt={plate} style={{width: '60px'}}/>
                  <h2 style={{color:'white'}}>Recipe </h2>
   
                  <input type="text" placeholder="username"/>

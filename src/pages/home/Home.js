@@ -2,12 +2,14 @@ import {useState, useEffect} from 'react'
 import './style.css'
 import axios from 'axios';
 import RecipeCard from './RecipeCard';
+import chef from '../../assets/chef.png'
 
 const Home=({updateDetails})=>{
 
     const [searchText, setSearchText] = useState("")
     const [dropDown, setDropDown] = useState('breakfast')
     const [data, setData] = useState([]);
+    // const [show, setShow] = useState(false)
 
     const apiID = "901e6b6a";
     const apiKey = "0c490cc125cd01592c30205615da2c02"
@@ -22,6 +24,7 @@ const Home=({updateDetails})=>{
             axios.get(url)
             .then(response => {
             setData(response.data.hits);
+           
         });
         } else{
             alert('Please fill the input')
@@ -53,6 +56,9 @@ const Home=({updateDetails})=>{
                 
             </div>
           
+          <div>
+                <img src={chef} alt={chef} style={{width: '400px'}} />
+          </div>
                         
             <div className="cards-container">       
                 {data !== [] && data.map((item, index)=><RecipeCard item={item} key={index} updateDetails={updateDetails}/>)}

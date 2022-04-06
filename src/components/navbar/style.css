@@ -28,6 +28,7 @@ ul{
     /* border: 1px solid red; */
     display: flex;
     justify-content: space-evenly;
+    margin-right: 30px;
 }
 li{
     display: flex;
@@ -35,5 +36,16 @@ li{
     margin: 10px;
     padding: 10px;
     list-style-type: none;
-    text-decoration: none;
+    
+}
+
+li:hover{
+    color: #02475E;
+}
+
+
+@media (max-width: 760px){
+    ul{
+        display: block;
+    }
 }
