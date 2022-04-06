@@ -3,7 +3,7 @@ This is my second project in Clarusway.
 
 It is an app to search any recipe
 
-link to the website: https://thawing-ridge-35559.herokuapp.com/
+link to the website: https://lit-falls-61727.herokuapp.com/
 
 Tech Stack
 React.js, React Router (Hooks)
